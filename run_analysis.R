@@ -7,10 +7,6 @@ get_tidy_data <- function(){
   test_sub <- read.table("test/subject_test.txt")
   train_sub <- read.table("train/subject_train.txt")
   features <- read.table("features.txt")
-  
-  ##write the columns names
-  names(x_test) <- features[,2]
-  names(x_train) <- features[,2]
     
   ##add columns with subject id and activity id to tables
   x_test <- cbind(y_test,x_test)
@@ -36,7 +32,7 @@ get_tidy_data <- function(){
   
   ##keep only the measurements on the mean and standard deviation for each measurement
   library(dplyr)
-  tidy_data <- select(x, subject, labels, contains("mean"), contains("std"))
+  tidy_data <- select(x, subject, labels, contains("mean.."), contains("std.."))
   
   ##create data with the average of each variable for each activity and each subject.
   group_tidy_data <- tidy_data %>% group_by(subject, labels) %>% summarise_each(funs(mean))
