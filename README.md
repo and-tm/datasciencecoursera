@@ -1,6 +1,18 @@
 # datasciencecoursera
 
 #####
+How the script works:
+1. Read test and training data, labels and subject and read features
+2. Add columns with subject id and activity id to test and training data set
+3. Write the column names from features
+4. Merges the training and the test data sets
+5. Delete invalid characters in column names(like "(", ")", "-")
+6. Sort data set by subject id and labels id
+7. Keep only the measurements on the mean and standard deviation for each measurement
+8. Create data with the average of each variable for each activity and each subject.
+
+
+
 DATA DICTIONARY
 
 
