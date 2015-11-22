@@ -26,7 +26,7 @@ get_tidy_data <- function(){
   column_names <- make.names(names=names(x), unique=TRUE, allow_ = TRUE)
   names(x) <- column_names
   
-  ##sort by subject id and labels is
+  ##sort by subject id and labels id
   library(plyr)
   x<-arrange(x,subject,labels)
   
